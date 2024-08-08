@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avito's example of Playwright test</title>
+    <link href="/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap-icons/bootstrap-icons.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-fluid m-0 p-0 d-flex flex-column min-vh-100">
+
+        <main class="flex-grow-1 d-flex justify-content-center align-items-center">
+
+            <div class="col-xxl-8 col-xl-8 col-lg-10 col-md-10">
+                <div>
+                    <form action="/run-test" method="post">
+                        <legend>Demo Playwright script for checking Avito profile</legend>
+                        <div class="mb-3">
+                            <label for="inputCookie" class="form-label">Cookie ssid from the browser</label>
+                            <input type="text" class="form-control" id="inputCookie" name="inputCookie"
+                                aria-describedby="cookieHelp">
+                            <div id="cookieHelp" class="form-text">Example: dd03219dd34c1752309adb21d9c2ca17.1722815119</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputUserAgent" class="form-label">User Agent from the browser</label>
+                            <input type="text" class="form-control" id="inputUserAgent" name="inputUserAgent" aria-describedby="userAgentHelp">
+                            <div id="userAgentHelp" class="form-text">Example: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.6 Safari/605.1.15</div>
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">Screen Resolution (optional)</span>
+                            <input type="text" class="form-control" id="screenSizeWidth" name="screenSizeWidth" placeholder="Width (Default: 1920)" aria-label="Width" aria-describedby="screenSizeHelp">
+                            <span class="input-group-text">x</span>
+                            <input type="text" class="form-control" id="screenSizeHeight" name="screenSizeHeight" placeholder="Height (Default: 1080)" aria-label="Height" aria-describedby="screenSizeHelp">
+                        </div>
+
+                        <div class="text-center mt-3">
+                            <button type="submit" class="btn btn-secondary fs-5 px-3">Check Avito Profile</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/js/bootstrap/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
