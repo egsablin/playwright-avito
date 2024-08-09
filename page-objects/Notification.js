@@ -10,10 +10,12 @@ export class Notification {
         await this.notificationLink.waitFor()
         await this.notificationLink.click()
         await this.page.waitForURL(/\/profile\/notifications/)
+        
     }
 
     getData = async () => {
 
+        await page.waitForTimeout(5000)
         await this.notificationText.waitFor()
         const newNotificationsNumber = await this.newNotifications.count()
         const newNotificationsObj = {}

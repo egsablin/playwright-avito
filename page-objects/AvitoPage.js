@@ -12,7 +12,7 @@ export class AvitoPage {
     }
 
     visit = async () => {
-        await this.page.goto("https://www.avito.ru")
+        await this.page.goto("https://www.avito.ru", {timeout: 50000})
     }
 
     getData = async () => {
