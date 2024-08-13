@@ -15,7 +15,7 @@ export class Notification {
 
     getData = async () => {
 
-        await page.waitForTimeout(5000)
+        await this.page.waitForTimeout(5000)
         await this.notificationText.waitFor()
         const newNotificationsNumber = await this.newNotifications.count()
         const newNotificationsObj = {}
