@@ -2,6 +2,9 @@ Playwright Avito Testing Project
 
 This project is an educational experiment for testing with Playwright.
 
+Frontend: HTML, CSS, Bootstrap
+Backend: NodeJS, Express
+
 Installation Steps
 
 To get started with this project, follow these steps:
@@ -21,11 +24,11 @@ To get started with this project, follow these steps:
   4. Install Playwright Browsers:
      Playwright requires browser binaries to be installed. Run the following command to install them:
 
-    npx playwright test
+    npx playwright install
+  
+  5. Run Test
 
-Usage
-
-After installing the dependencies and Playwright browsers, you can start writing and running tests. For more information on how to create and manage tests with Playwright, refer to the Playwright Documentation.
+    npm test
 
 Contributing
 
@@ -37,4 +40,4 @@ This project is licensed under the MIT License.
 
 Contact
 
-For any questions or feedback, please contact me at your-email@example.com.
+For any questions or feedback, please contact me at egsablin@gmail.com.
