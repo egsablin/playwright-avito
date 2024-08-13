@@ -2,8 +2,7 @@ Playwright Avito Testing Project
 
 This project is an educational experiment for testing with Playwright.
 
-Frontend: HTML, CSS, Bootstrap
-Backend: NodeJS, Express
+Frontend: HTML, CSS, Bootstrap / Backend: NodeJS, Express
 
 Installation Steps
 
