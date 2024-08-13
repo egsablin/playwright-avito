@@ -46,7 +46,7 @@ app.post('/run-test', async (req, res) => {
   try {
 
     const cookieSSID = req.body.inputCookie
-    const userAgent = req.body.inputUserAgent
+    const userAgent = req.body.inputUserAgent || "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36"
     const screenSizeWeight = parseInt(req.body.screenSizeweight) || 1920
     const screenSizeHeight = parseInt(req.body.screenSizeHeight) || 1080
     const parser = new UAParser(userAgent)
