@@ -7,6 +7,7 @@ export class MyAdvertises {
         this.activeTab = page.getByRole('tab', { name: 'Активные' })
         // this.archiveTab = page.getByRole('tab', { name: 'Архив' })
         // this.deletedTab = page.getByRole('tab', { name: 'Удалённые' })
+        this.activeCountNumber = page.locator('[class*="styles-module-counter-"]')
         this.activeAds = page.locator('[class*="item-body-root-"]')
         this.dialogWindow = page.locator('div[role="dialog"]');
     }
@@ -31,7 +32,9 @@ export class MyAdvertises {
     getData = async () => {
         // await this.activeTab.waitFor()
         // await this.activeTab.click()
-        await this.activeAds.waitFor()
+        await this.activeCountNumber.first().waitFor()
+        const activeCountNumber = await this.activeCountNumber.first().innerText()
+        await this.activeAds.first().waitFor()
         const activeAdsCount = await this.activeAds.count()
         const activeAdsCountObj = {}
 
@@ -47,6 +50,7 @@ export class MyAdvertises {
         }
 
         return {
+            activeCountNumber: activeCountNumber,
             activeAdsCount: activeAdsCount,
             activeAdsCountObj: activeAdsCountObj
         }

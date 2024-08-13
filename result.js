@@ -102,7 +102,7 @@ export const genResult = async (resultObj) => {
                     </dl>
                 </dd>
 
-            <dt class="col-sm-3">Active Advertises: ${resultObj.advertisesData.activeAdsCount}</dt>
+            <dt class="col-sm-3">Active Advertises: ${resultObj.advertisesData.activeCountNumber}</dt>
                 <dd class="col-sm-9">
                     <dl class="row">
                         ${advertises}
