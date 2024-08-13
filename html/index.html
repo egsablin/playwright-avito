@@ -15,31 +15,54 @@
         <main class="flex-grow-1 d-flex justify-content-center align-items-center">
 
             <div class="col-xxl-8 col-xl-8 col-lg-10 col-md-10">
+
+                <div class="accordion mb-3" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Test-Case: Проверить Avito профиль с использование Playwright + JS (автоматический тест)
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <strong>-</strong> Авторизоваться с помощью cookie (ssid), он берется в браузере
+                                (DevTools) после захода в свой Avito профиль<br>
+                                <strong>-</strong> Проверить номер профиля и его статистику (дата регистрации, средний
+                                бал, количество отзывов)<br>
+                                <strong>-</strong> Посмотреть e-mail и телефон профиля<br>
+                                <strong>-</strong> Посмотреть уведомления профиля<br>
+                                <strong>-</strong> Посмотреть активные объявления профиля<br>
+                                <code>Периодически cookie ssid нужно обновлять в связи с системой безопасности Avito, необходимо проводить отдельный black box тест на эту тему.</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div>
                     <form action="/run-test" method="post">
-                        <legend>Demo Playwright script for checking Avito profile</legend>
                         <div class="mb-3">
                             <label for="inputCookie" class="form-label">Cookie ssid from the browser</label>
                             <input type="text" class="form-control" id="inputCookie" name="inputCookie"
                                 aria-describedby="cookieHelp">
-                            <div id="cookieHelp" class="form-text">Example: dd03219dd34c1752309adb21d9c2ca17.1722815119</div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="inputUserAgent" class="form-label">User Agent from the browser (optional)</label>
-                            <input type="text" class="form-control" id="inputUserAgent" name="inputUserAgent" aria-describedby="userAgentHelp">
-                            <div id="userAgentHelp" class="form-text">Default: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36</div>
+                            <div id="cookieHelp" class="form-text">Example: dd03219dd34c1752309adb21d9c2ca17.1722815119
+                            </div>
                         </div>
                         <div class="input-group mb-3">
                             <span class="input-group-text">Screen Resolution (optional)</span>
-                            <input type="text" class="form-control" id="screenSizeWidth" name="screenSizeWidth" placeholder="Width (Default: 1920)" aria-label="Width" aria-describedby="screenSizeHelp">
+                            <input type="text" class="form-control" id="screenSizeWidth" name="screenSizeWidth"
+                                placeholder="Width (Default: 1920)" aria-label="Width"
+                                aria-describedby="screenSizeHelp">
                             <span class="input-group-text">x</span>
-                            <input type="text" class="form-control" id="screenSizeHeight" name="screenSizeHeight" placeholder="Height (Default: 1080)" aria-label="Height" aria-describedby="screenSizeHelp">
+                            <input type="text" class="form-control" id="screenSizeHeight" name="screenSizeHeight"
+                                placeholder="Height (Default: 1080)" aria-label="Height"
+                                aria-describedby="screenSizeHelp">
                         </div>
 
                         <div class="text-center mt-3">
-                            <button type="submit" class="btn btn-secondary fs-5 px-3">Check Avito Profile</button>
+                            <button type="submit" class="btn btn-secondary fs-5 px-3">Check Avito
+                                Profile</button>
                         </div>
-
                     </form>
                 </div>
             </div>

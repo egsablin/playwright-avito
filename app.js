@@ -1,8 +1,7 @@
-import { chromium, firefox, webkit } from "playwright"
+import { chromium } from "playwright"
 import express from 'express'
 const app = express()
 import path from 'path'
-import UAParser from 'ua-parser-js'
 import { fileURLToPath } from 'url'
 import { AvitoPage } from "./page-objects/AvitoPage.js"
 import { SettingsPage } from "./page-objects/SettingsPage.js"
@@ -46,23 +45,10 @@ app.post('/run-test', async (req, res) => {
   try {
 
     const cookieSSID = req.body.inputCookie
-    const userAgent = req.body.inputUserAgent || "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36"
     const screenSizeWeight = parseInt(req.body.screenSizeweight) || 1920
     const screenSizeHeight = parseInt(req.body.screenSizeHeight) || 1080
-    const parser = new UAParser(userAgent)
-    const browserTypeObj = parser.getBrowser()
-    const browserType = browserTypeObj.name
 
-    let browser;
-    if (browserType === 'Chrome') {
-      browser = await chromium.launch()
-    } else if (browserType === 'Firefox') {
-      browser = await firefox.launch()
-    } else if (browserType === 'Safari') {
-      browser = await webkit.launch()
-    } else {
-      throw new Error(`Unsupported browser: ${browserType}`);
-    }
+    const browser = await chromium.launch()
 
     const cookie = {
       name: 'sessid',
@@ -74,7 +60,6 @@ app.post('/run-test', async (req, res) => {
     const viewportSize = { width: screenSizeWeight, height: screenSizeHeight }
 
     const context = await browser.newContext({
-      userAgent: userAgent,
       viewport: viewportSize,
       recordVideo: {
         dir: 'html/reports/video',  // Directory where videos will be saved
